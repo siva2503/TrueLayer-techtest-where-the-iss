@@ -7,4 +7,10 @@ export default {
   preset: 'ts-jest',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>/support/setup.ts'],
+  reporters: [
+    'default',
+    ['./node_modules/jest-html-reporter', {
+      'pageTitle': 'TrueLayer - WhereTheIss- Test Report'
+    }]
+  ]
 }

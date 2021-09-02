@@ -20,6 +20,7 @@
     "eslint": "^7.32.0",
     "generate-schema": "^2.6.0",
     "jest": "^27.1.0",
+    "jest-html-reporter": "^3.4.1",
     "jest-json-schema-extended": "^1.0.0",
     "lodash": "^4.17.21",
     "ts-jest": "^27.0.5",
