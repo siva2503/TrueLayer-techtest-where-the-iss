@@ -6,11 +6,12 @@ const getAbsolutePathOf = (relativePath: string) => {
 }
 
 export const CONTRACTMAP: { [key: string]: string } = {
-  IssLocationContract: getAbsolutePathOf('./iss_location_response.json'),
+  IssPositionContract: getAbsolutePathOf('./iss_position_response.json'),
   TLESDataContract: getAbsolutePathOf('./tles_response.json')
 }
 
+
 export enum CONTRACT_NAMES {
-  IssLocation = 'IssLocationContract',
-  TlesData = 'TLESDataContract'
+  TlesData = 'TLESDataContract',
+  IssPositionContract = 'IssPositionContract'
 }

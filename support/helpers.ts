@@ -1,7 +1,7 @@
 import * as generateSchema from 'generate-schema'
 import { get } from 'lodash'
 import * as fs from 'fs'
-import { CONTRACTMAP } from '../contracts/contractsMapping'
+import { CONTRACTMAP, CONTRACT_NAMES } from '../contracts/contractsMapping'
 
 
 interface ExpectedSchema {
@@ -28,8 +28,14 @@ const parseJsonFromFile = (filePath: string) => {
 /*
 Using generateSchema library this funciton creates schema out of sample response.
 */
-const createSchemaFromContract = (contract: string): ExpectedSchema => {
-  const newschema = generateSchema.json(get(contract, ['data']))
+const createSchemaFromContract = (contract: string, typeOfData?: string): ExpectedSchema => {
+  let contractKey
+  if (typeOfData == 'array') {
+    contractKey = get(contract, ['data'])[0]
+  } else {
+    contractKey = get(contract, ['data'])
+  }
+  const newschema = generateSchema.json(contractKey)
   delete newschema.$schema
   return newschema
 }
@@ -47,8 +53,9 @@ const makeSchemaObjectStrict = (obj: ExpectedSchema) => {
   gets expectedschema from sample response, makes the schema object strict and returns
 */
 export const getExpectedSchemaFromContract = (contractName: string): ExpectedSchema => {
+  const dataKey = contractName === CONTRACT_NAMES.IssPositionContract ? 'array' : undefined
   const contractJson = parseJsonFromFile(CONTRACTMAP[contractName])
-  const expectedSchema = createSchemaFromContract(contractJson)
+  const expectedSchema = createSchemaFromContract(contractJson, dataKey)
   makeSchemaObjectStrict(expectedSchema)
   return expectedSchema
 }

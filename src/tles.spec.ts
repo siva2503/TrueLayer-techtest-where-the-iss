@@ -5,7 +5,7 @@ import { getExpectedSchemaFromContract } from '../support/helpers'
 import { CONTRACT_NAMES } from '../contracts/contractsMapping'
 import { tleReferenceDataFromNasa } from '../support/getNasaResponse'
 
-describe('Tests satellites/[id]/tles endpoint of wheretheiss.at service ', () => {
+describe('Tests "satellites/[id]/tles" endpoint of wheretheiss.at service ', () => {
   const ENDPOINT = TLES_URL()
   it('Validate if response data retrieved contains all necessary attributes and compare against reference', async () => {
     const response = await axios.get(
