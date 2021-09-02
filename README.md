@@ -35,3 +35,8 @@ As provided in the challenge instructions, only the below two endpoints were con
 
 - statellites/[id]/poisitions
 - statellites/[id]/tles
+
+
+# TASK 2 Answers:
+
+Answers for task 2 is added [here](/Part2-README.md)
