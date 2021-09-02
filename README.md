@@ -27,3 +27,6 @@ The implemenation can be executed using npm script added to the project
 ## Reporting
 
 [jest-html-reporter](https://www.npmjs.com/package/jest-html-reporter) is used to display html report of the execution. A sample report is committed to the project for reference. Please find below a sample snapshot,
+
+<img width="1618" alt="Screenshot 2021-09-02 at 09 53 01" src="https://user-images.githubusercontent.com/13304448/131814356-2251400f-6c79-42a5-a11f-e31eeb6d0b90.png">
+
